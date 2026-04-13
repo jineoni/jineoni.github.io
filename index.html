@@ -1,129 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jiyoon Shin</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --primary: #4F8EF7;
-    --dark: #0f172a;
-    --text: #334155;
-    --muted: #94a3b8;
-    --border: #e2e8f0;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; color: var(--text); }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; width: 100%;
-    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
-    z-index: 100; display: flex; justify-content: flex-end; align-items: center;
-    padding: 20px 64px; border-bottom: 1px solid var(--border);
-  }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.87rem; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--dark); }
-
-  /* SECTIONS */
-  .section { max-width: 720px; margin: 0 auto; padding: 88px 32px; }
-  .section + .section { border-top: 1px solid var(--border); }
-
-  /* HERO */
-  #hero { padding-top: 148px; }
-  #hero h1 { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
-  .hero-sub { font-size: 0.93rem; color: var(--muted); margin-bottom: 18px; }
-  #hero p { font-size: 0.93rem; color: var(--text); line-height: 1.75; margin-bottom: 28px; max-width: 500px; }
-  .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 9px 18px; border-radius: 6px;
-    text-decoration: none; font-size: 0.83rem; font-weight: 500;
-    border: 1px solid var(--border); color: var(--text);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn:hover { border-color: var(--primary); color: var(--primary); }
-  .btn svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-  /* SECTION LABEL */
-  .sec-label { font-size: 0.7rem; font-weight: 700; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
-
-  /* TAGS */
-  .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 8px; }
-  .tag { font-size: 0.7rem; color: var(--muted); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; }
-
-  /* PROJECTS */
-  .project-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
-  .project-item:last-child { border-bottom: none; }
-  .project-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 6px; }
-  .project-top h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
-  .project-type { font-size: 0.73rem; color: var(--muted); }
-  .project-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
-  .read-more { font-size: 0.81rem; color: var(--primary); font-weight: 500; cursor: pointer; background: none; border: none; padding: 0; }
-  .read-more:hover { text-decoration: underline; }
-
-  /* EXPERIENCE */
-  .exp-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
-  .exp-item:last-child { border-bottom: none; }
-  .exp-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 3px; }
-  .exp-top h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
-  .exp-period { font-size: 0.73rem; color: var(--muted); white-space: nowrap; }
-  .exp-role { font-size: 0.83rem; color: var(--muted); margin-bottom: 10px; }
-  .exp-desc { font-size: 0.84rem; color: var(--text); line-height: 1.7; margin-top: 10px; }
-  .exp-company-link { font-size: 0.8rem; color: var(--primary); text-decoration: none; font-weight: 500; }
-  .exp-company-link:hover { text-decoration: underline; }
-
-  /* ACHIEVEMENTS */
-  .ach-item { padding: 18px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
-  .ach-item:last-child { border-bottom: none; }
-  .ach-left h3 { font-size: 0.92rem; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
-  .ach-left p { font-size: 0.81rem; color: var(--muted); }
-  .ach-year { font-size: 0.73rem; color: var(--muted); white-space: nowrap; }
-  .ext-link { color: var(--primary); text-decoration: none; font-size: 0.81rem; }
-  .ext-link:hover { text-decoration: underline; }
-
-  /* MODAL */
-  .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(15,23,42,0.45); backdrop-filter: blur(4px);
-    z-index: 200; align-items: center; justify-content: center; padding: 24px;
-  }
-  .modal-overlay.open { display: flex; }
-  .modal {
-    background: #fff; border-radius: 12px; max-width: 600px; width: 100%;
-    max-height: 85vh; overflow-y: auto; padding: 40px;
-    position: relative; animation: slideUp 0.22s ease;
-  }
-  @keyframes slideUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: none; } }
-  .modal-close {
-    position: absolute; top: 16px; right: 18px;
-    background: none; border: none; cursor: pointer;
-    font-size: 1.3rem; color: var(--muted); line-height: 1;
-  }
-  .modal-close:hover { color: var(--dark); }
-  .modal-type { font-size: 0.7rem; font-weight: 700; color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
-  .modal h2 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 6px; line-height: 1.3; }
-  .modal-period { font-size: 0.78rem; color: var(--muted); margin-bottom: 16px; }
-  .modal .tags { margin-bottom: 20px; }
-  .modal-section { margin-bottom: 20px; }
-  .modal-section h4 { font-size: 0.72rem; font-weight: 700; color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
-  .modal-section p { font-size: 0.88rem; color: var(--text); line-height: 1.72; }
-  .modal-section ul { padding-left: 18px; }
-  .modal-section ul li { font-size: 0.87rem; color: var(--text); line-height: 1.7; margin-bottom: 6px; }
-  .result-item {
-    display: flex; gap: 10px; align-items: flex-start;
-    background: #f8fafc; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
-    font-size: 0.87rem; color: var(--text); line-height: 1.65;
-  }
-  .result-check { color: #22c55e; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-  footer { text-align: center; padding: 28px; font-size: 0.76rem; color: var(--muted); border-top: 1px solid var(--border); }
-
-  .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s ease; }
-  .fade.in { opacity: 1; transform: none; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiyoon Shin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -136,17 +19,16 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="section" id="hero">
   <div class="fade">
-    <div style="display:flex; align-items:center; gap:20px; margin-bottom:4px;">
-      <img id="profile-img" src="" alt="profile" style="width:72px; height:72px; border-radius:50%; object-fit:cover; border:2px solid var(--border); flex-shrink:0;">
+    <div class="hero-profile">
+      <img src="https://avatars.githubusercontent.com/jineoni" alt="Jiyoon Shin">
       <div>
         <h1>Jiyoon Shin</h1>
-        <div class="hero-sub" style="margin-bottom:0;">Data Scientist · Seoul, South Korea</div>
+        <div class="hero-sub">Data Scientist · Seoul, South Korea</div>
       </div>
     </div>
-    <p style="margin-top:18px;">I turn complex data into clear insights that solve real-world problems — building evidence-based solutions for a more accessible world.</p>
+    <p>I use data to understand how systems work and how to make them work better.</p>
     <div class="hero-btns">
       <a href="mailto:jyoon.shin12@gmail.com" class="btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -168,7 +50,6 @@
   </div>
 </div>
 
-<!-- PROJECTS -->
 <div class="section" id="projects">
   <div class="fade">
     <div class="sec-label">Projects</div>
@@ -202,7 +83,6 @@
   </div>
 </div>
 
-<!-- EXPERIENCE -->
 <div class="section" id="experience">
   <div class="fade">
     <div class="sec-label">Experience</div>
@@ -211,14 +91,14 @@
       <div class="exp-role">Research Analyst · Seoul</div>
       <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Traackr</span><span class="tag">Sprinklr</span><span class="tag">GCP</span><span class="tag">Docker</span></div>
       <div class="exp-desc">A PR strategy team measuring Samsung Mobile Experience performance and proposing data-driven strategies.<br><br>Built and maintained the data infrastructure, from ETL pipelines to dashboard QA and model deployment, that the team relied on to run its analytics.</div>
-      <a href="https://www.kearney.com" target="_blank" class="exp-company-link" style="display:inline-block;margin-top:10px;">Visit Company Website →</a>
+      <a href="https://www.kearney.com" target="_blank" class="exp-company-link">Visit Company Website →</a>
     </div>
     <div class="exp-item">
       <div class="exp-top"><h3>Kakao Mobility</h3><span class="exp-period">May 2025–Feb 2026</span></div>
       <div class="exp-role">Data Science Intern · Seongnam</div>
       <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">GCP</span><span class="tag">Superset</span></div>
       <div class="exp-desc">An AI R&D team developing ETA prediction models for Korea's leading mobility platform.<br><br>Investigated the root causes of speed and routing discrepancies through signal cycle estimation, edge case analysis, and traffic pattern clustering, translating findings into actionable inputs for model improvement.</div>
-      <a href="https://www.kakaomobility.com" target="_blank" class="exp-company-link" style="display:inline-block;margin-top:10px;">Visit Company Website →</a>
+      <a href="https://www.kakaomobility.com" target="_blank" class="exp-company-link">Visit Company Website →</a>
     </div>
     <div class="exp-item">
       <div class="exp-top"><h3>Transportation Planning Lab</h3><span class="exp-period">Mar–Jun 2024</span></div>
@@ -229,7 +109,6 @@
   </div>
 </div>
 
-<!-- ACHIEVEMENTS -->
 <div class="section" id="achievements">
   <div class="fade">
     <div class="sec-label">Achievements</div>
@@ -252,7 +131,6 @@
 
 <footer>© 2026 Jiyoon Shin</footer>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeOnBg(event)">
   <div class="modal" id="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
@@ -260,120 +138,6 @@
   </div>
 </div>
 
-<script>
-  const projects = {
-    drt: {
-      type: 'Undergraduate Capstone Project',
-      title: 'Impact of Demand-Responsive Transit (DRT) on Property Values',
-      period: 'Sep 2025 – Dec 2025',
-      tags: ['Python', 'Econometrics', 'RDD', 'GIS'],
-      overview: 'An RDD-based causal analysis quantifying the impact of DRT as a catalyst for property value appreciation in transport-disadvantaged areas.',
-      context: 'Limited transit options in disadvantaged areas can suppress local housing market potential. While DRT aims to bridge this mobility gap, its actual impact on property values needed verification through empirical data.',
-      works: [
-        ['Target Area Identification', 'Computed a regional accessibility index using Python and GIS to identify transport-disadvantaged areas and grouped regions with similar accessibility profiles.'],
-        ['Dataset Construction', 'Merged 10 years of housing transaction records with official DRT service logs to track long-term price changes.'],
-        ['Causal Analysis', 'Applied a Regression Discontinuity Design (RDD) to compare property value trends before and after DRT introduction, isolating its specific market effect.'],
-      ],
-      results: [
-        ['Value Appreciation', 'Shifted downward price trends toward a 3.51 growth trend in declining markets, turning a slump into an improvement.'],
-        ['Market Amplification', 'Achieved a price increase 1.5× stronger than non-service areas in upward markets, driven by enhanced accessibility.'],
-        ['Price Defense', 'Moderated property value drops during downturns, reducing the extent of price depreciation by 60% compared to non-service areas.'],
-      ]
-    },
-    dotori: {
-      type: 'Team Project',
-      title: 'Dotori — AI College Application Consulting Agent',
-      period: 'Nov 2024 – Apr 2025',
-      tags: ['Python', 'TypeScript', 'OpenAI', 'FastAPI'],
-      overview: 'An AI-powered platform providing personalized, cost-effective, and data-backed college admissions strategies for students.',
-      context: 'Professional admissions consulting is often prohibitively expensive, and manual research across multiple institutions is time-intensive, creating significant barriers to information access.',
-      works: [
-        ['Automated Data Extraction', 'Built a pipeline to convert unstructured PDF reports (Common Data Sets) from various universities into a structured database.'],
-        ['Weighted Matching Algorithm', 'Developed a scoring system using weighted metrics to categorize school compatibility into Reach, Match, and Safety based on student profiles.'],
-        ['Matching Dashboard', 'Developed a visualization feature for students to identify their strengths and weaknesses for each matched university.'],
-        ['AI Essay Strategy', 'Explored the feasibility of generating personalized essay drafts.'],
-      ],
-      results: []
-    },
-    yonsei: {
-      type: 'Team Project',
-      title: 'Mobility Solution for Yonsei University Students',
-      period: 'Sep 2023 – Dec 2023',
-      tags: ['R', 'SP Survey', 'Logit Model', 'K-means'],
-      overview: 'A feasibility study integrating DRT system design and Logit modeling to overcome infrastructure barriers and optimize campus mobility.',
-      context: 'Steep slopes and narrow pedestrian paths discourage walking and increase commute stress. Existing fixed-route shuttles lack the flexibility to adapt to dynamic student demand patterns.',
-      works: [
-        ['System & Operation Design', 'Proposed an app-based DRT model featuring real-time requests, tiered fare policies, and UWB-based secure boarding verification.'],
-        ['Routing Algorithm', 'Applied K-means clustering for initial assignment and developed logic to minimize additional travel time during dynamic route updates.'],
-        ['Discrete Choice Modeling', 'Designed a Stated-Preference (SP) survey and built a Logit model to analyze the utility of DRT compared to walking, local buses, and personal mobility.'],
-        ['Model Optimization', 'Identified and resolved critical estimation errors, such as multicollinearity in fare variables and lack of variation in fixed-level parameters.'],
-      ],
-      results: [
-        ['Behavioral Insights', 'Quantified the negative impact of access time and fares on transit utility, providing a data-driven basis for DRT adoption.'],
-        ['Demographic Analysis', 'Identified significant variations in transit utility based on gender, age, and academic status (e.g., higher PM utility for undergraduates).'],
-        ['Methodological Rigor', 'Improved model accuracy by restructuring variable levels, ensuring statistically significant coefficient estimation for future mobility studies.'],
-      ]
-    }
-  };
-
-  function openModal(id) {
-    const p = projects[id];
-    const resultBlock = p.results.length ? `
-      <div class="modal-section">
-        <h4>Key Results</h4>
-        ${p.results.map(([k,v]) => `
-          <div class="result-item">
-            <div class="result-check">✓</div>
-            <div><strong>${k}:</strong> ${v}</div>
-          </div>`).join('')}
-      </div>` : '';
-    document.getElementById('modal-content').innerHTML = `
-      <div class="modal-type">${p.type}</div>
-      <h2>${p.title}</h2>
-      <div class="modal-period">📅 ${p.period}</div>
-      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-      <div class="modal-section">
-        <h4>Overview</h4>
-        <p>${p.overview}</p>
-      </div>
-      <div class="modal-section">
-        <h4>Problem Context</h4>
-        <p>${p.context}</p>
-      </div>
-      <div class="modal-section">
-        <h4>Key Works</h4>
-        <ul>${p.works.map(([k,v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul>
-      </div>
-      ${resultBlock}
-    `;
-    document.getElementById('modal-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    document.getElementById('modal-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function closeOnBg(e) {
-    if (e.target === document.getElementById('modal-overlay')) closeModal();
-  }
-
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  // Load profile image from uploaded file via base64
-  (function() {
-    const img = document.getElementById('profile-img');
-    // Use a placeholder gradient until image URL is set
-    img.onerror = function() {
-      img.style.display = 'none';
-    };
-    // Will be replaced with actual base64 data
-    img.src = "https://avatars.githubusercontent.com/jineoni";
-  })();
-
-  const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: 0.08 });
-  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-</script>
+<script src="script.js"></script>
 </body>
 </html>
