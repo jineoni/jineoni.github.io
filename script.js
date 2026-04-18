@@ -68,7 +68,7 @@ function openModal(id) {
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-type">${p.type}</div>
     <h2>${p.title}</h2>
-    <div class="modal-period">📅 ${p.period}</div>
+    <div class="modal-period">${p.period}</div>
     <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
     <div class="modal-section"><h4>Overview</h4><p>${p.overview}</p></div>
     <div class="modal-section"><h4>Problem Context</h4><p>${p.context}</p></div>
