@@ -15,7 +15,8 @@ const projects = {
       ['District UMC gaps are multidimensional', 'The composite score ranged from 0.279 to 0.695 across Seoul\'s 25 districts, with lower-scoring districts showing deficits in devices, safety, and affordability rather than physical connectivity.'],
       ['Individual vulnerability explains more than district conditions', 'Over 99% of digital usage variance lies within districts, driven by education, age, and household composition.'],
       ['Platform signals diverged from administrative indicators', 'Particularly around devices and digital skills, highlighting gaps that survey data alone cannot capture.'],
-    ]
+    ],
+    slides: 'assets/slides/umc_slides.png'
   },
   drt: {
     type: 'Undergraduate Capstone Project',
@@ -89,16 +90,22 @@ function openModal(id) {
     <div class="modal-section"><h4>Problem Context</h4><p>${p.context}</p></div>
     <div class="modal-section"><h4>Key Works</h4><ul>${p.works.map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul></div>
     ${resultBlock}
+    ${p.poster ? `
     <div class="modal-section">
       <h4>Poster</h4>
-      <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: pointer;" onclick="window.open('assets/posters/capstone.png', '_blank')">
-        <img src="assets/posters/capstone.png" alt="Capstone poster" style="width:100%; display:block;">
+      <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: pointer;" onclick="window.open('${p.poster}', '_blank')">
+        <img src="${p.poster}" alt="Poster" style="width:100%; display:block;">
         <div style="padding: 10px 14px; display:flex; justify-content:space-between; align-items:center; border-top: 1px solid var(--border);">
-          <span style="font-size:12px; color:var(--muted);">Let It Be, Let It Move</span>
+          <span style="font-size:12px; color:var(--muted);">${p.posterTitle}</span>
           <span style="font-size:12px; color:var(--primary);">View full size →</span>
         </div>
       </div>
-    </div>
+    </div>` : ''}
+    ${p.slides ? `
+    <div class="modal-section">
+      <h4>Slides</h4>
+      <img src="${p.slides}" alt="Slides" style="width:100%; border-radius: 8px; border: 1px solid var(--border);">
+    </div>` : ''}
   `;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
