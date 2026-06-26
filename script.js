@@ -71,6 +71,16 @@ function openModal(id) {
     <div class="modal-section"><h4>Problem Context</h4><p>${p.context}</p></div>
     <div class="modal-section"><h4>Key Works</h4><ul>${p.works.map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul></div>
     ${resultBlock}
+    <div class="modal-section">
+      <h4>Poster</h4>
+      <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: pointer;" onclick="window.open('assets/posters/capstone.png', '_blank')">
+        <img src="assets/posters/capstone.png" alt="Capstone poster" style="width:100%; display:block;">
+        <div style="padding: 10px 14px; display:flex; justify-content:space-between; align-items:center; border-top: 1px solid var(--border);">
+          <span style="font-size:12px; color:var(--muted);">Let It Be, Let It Move</span>
+          <span style="font-size:12px; color:var(--primary);">View full size →</span>
+        </div>
+      </div>
+    </div>
   `;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
