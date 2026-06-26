@@ -6,8 +6,12 @@ Live at [jineoni.github.io](https://jineoni.github.io)
 
 ```
 jineoni.github.io/
-├── index.html      # Main structure and content
-├── style.css       # Styles and layout
-├── script.js       # Modal interactions and scroll animations
-└── images/         # Company logos
+├── assets/
+│   ├── resume.pdf       # Downloadable resume
+│   ├── posters/         # Research and project posters
+│   └── slides/          # Presentation slides
+├── images/              # Company logos
+├── index.html           # Main structure and content
+├── style.css            # Styles and layout
+└── script.js            # Modal interactions and scroll animations
 ```
