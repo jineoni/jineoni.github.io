@@ -33,7 +33,9 @@ const projects = {
       ['Value Appreciation', 'Shifted downward price trends toward a 3.51M KRW growth trend in declining markets.'],
       ['Market Amplification', 'Achieved a price increase 1.5× stronger than non-service areas in upward markets.'],
       ['Price Defense', 'Moderated property value drops during downturns compared to non-service areas.'],
-    ]
+    ],
+    poster: 'assets/posters/capstone.png',
+    posterTitle: 'Let It Be, Let It Move'
   },
   dotori: {
     type: 'Team Project',
