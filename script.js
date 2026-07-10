@@ -4,17 +4,17 @@ const projects = {
     title: 'Digital Connectivity Disparities in Seoul',
     period: 'Dec 2025 – Jun 2026',
     tags: ['Python', 'HLM', 'OpenAI API'],
-    overview: 'This project examines digital connectivity disparities in Seoul through three sequential analytical layers: constructing a district-level UMC index, decomposing individual and district-level determinants via HLM, and validating findings through LLM-based community post analysis.',
-    context: 'Seoul is widely regarded as one of the world\'s most connected cities, yet high infrastructure availability does not guarantee that all residents can use digital services in a meaningful way. This project reframes digital connectivity as a measurement problem: not whether access exists, but where gaps persist and who is most vulnerable.',
+    overview: 'A multi-layer study measuring digital connectivity gaps across Seoul, combining three layers: a district-level UMC index, multilevel modeling of individual and district effects, and platform-text signal analysis.',
+    context: 'Seoul is often described as a fully connected city, yet high network availability doesn\'t reveal whether residents can use digital services in a meaningful, safe, and affordable way. This study frames connectivity as a measurement problem, not just a question of access, revealing where gaps persist and who is most vulnerable.',
     works: [
-      ['District-level UMC Index', 'Constructed a 6-dimension index across Seoul\'s 25 districts measuring relative digital connectivity disparities across connectivity, availability, affordability, devices, digital skills, and safety.'],
-      ['Individual and District-level Decomposition', 'Applied two-level HLM on 10,000+ survey records to separate individual-level factors from district-level contextual conditions.'],
-      ['Platform Signal Analysis', 'Built an LLM-based text classification pipeline to analyze 130K+ community posts by UMC dimension, integrating findings with district-level priors via Bayesian updating to validate quantitative results.'],
+      ['Index Construction', 'Built a 6-dimension UMC index across Seoul\'s 25 districts, capturing disparities in availability, affordability, devices, digital skills, and safety.'],
+      ['Multilevel Decomposition', 'Applied two-level HLM on 10,000+ survey records to separate individual-level and district-level drivers of digital usage.'],
+      ['Platform Signal Validation', 'Built an LLM-based text classification pipeline on 130K+ community posts, validating quantitative findings against platform-visible signals via Bayesian updating.'],
     ],
     results: [
-      ['District UMC gaps are multidimensional', 'The composite score ranged from 0.279 to 0.695 across Seoul\'s 25 districts, with lower-scoring districts showing deficits in devices, safety, and affordability rather than physical connectivity.'],
-      ['Individual vulnerability explains more than district conditions', 'Over 99% of digital usage variance lies within districts, driven by education, age, and household composition.'],
-      ['Platform signals diverged from administrative indicators', 'Particularly around devices and digital skills, highlighting gaps that survey data alone cannot capture.'],
+      ['District UMC gaps are multidimensional', 'Composite scores ranged from 0.279 to 0.695 across Seoul\'s 25 districts, with lower-scoring districts driven by gaps in devices, safety, and affordability rather than physical connectivity alone.'],
+      ['Individual vulnerability outweighs district conditions', 'Over 99% of digital usage variance lies within districts, driven by education, age, and household composition.'],
+      ['Platform signals reveal blind spots', 'Divergence from administrative indicators was sharpest around devices and digital skills, gaps that survey data alone can\'t capture.'],
     ],
     slides: 'assets/slides/umc_slides.png'
   },
@@ -56,17 +56,17 @@ const projects = {
     title: 'Mobility Solution for Yonsei University Students',
     period: 'Sep 2023 – Dec 2023',
     tags: ['R', 'SP Survey', 'Logit Model', 'K-means'],
-    overview: 'A feasibility study proposing an app-based DRT system to address campus mobility barriers at Yonsei University.',
-    context: 'Steep terrain and fixed-route shuttles make commuting difficult for students. Existing transit lacks the flexibility to meet dynamic demand.',
+    overview: 'A feasibility study proposing a demand-responsive shuttle service, evaluated against existing transit options through a student survey.',
+    context: 'Yonsei\'s fixed-route shuttles can\'t adapt to changing student demand, leaving some areas poorly served.',
     works: [
       ['System Design', 'Proposed a real-time DRT model with tiered fares and UWB-based boarding verification.'],
-      ['Routing', 'Applied K-means clustering for stop assignment with dynamic re-routing logic.'],
-      ['Behavioral Modeling', 'Designed an SP survey and fitted a Logit model to quantify student transit utility.'],
+      ['Routing Optimization', 'Applied K-means clustering to assign stops, with dynamic re-routing to match real-time demand.'],
+      ['Behavioral Modeling', 'Designed an SP survey and fitted a logit model to quantify student transit utility.'],
     ],
     results: [
-      ['Behavioral Insights', 'Quantified how access time and fares reduce transit utility, validating DRT as a preferred alternative.'],
-      ['Demographic Analysis', 'Found significant utility variation by gender, age, and academic status, informing fare and route design.'],
-      ['Model Accuracy', 'Improved estimation reliability by resolving multicollinearity in fare variables.'],
+      ['Utility Quantification', 'Access time and fares significantly reduced transit utility, confirming DRT as a preferred alternative.'],
+      ['Demographic Variation', 'Utility varied significantly by gender, age, and academic status, informing fare and route design.'],
+      ['Model Refinement', 'Resolved multicollinearity in fare variables to improve estimation reliability.'],
     ]
   }
 };
