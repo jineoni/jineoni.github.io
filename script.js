@@ -24,15 +24,15 @@ const projects = {
     period: 'Sep 2025 – Dec 2025',
     tags: ['Python', 'RDD'],
     overview: 'A causal study examining whether DRT introduction leads to measurable changes in property values in transport-disadvantaged areas.',
-    context: 'Limited transit access in disadvantaged areas can suppress local housing market potential, but the actual economic impact of DRT remained empirically unverified.',
+    context: 'Limited transit access can suppress property values in transport-disadvantaged areas, yet DRT\'s actual economic impact remains empirically unverified.',
     works: [
-      ['Area Identification', 'Constructed a GIS-based transit accessibility index using bus stop and subway station density to identify transport-disadvantaged areas, and matched comparable neighborhoods via quasi-experimental design.'],
-      ['Causal Analysis', 'Applied RDD with WLS across 12 matched neighborhood pairs to isolate DRT\'s impact on property values from broader market conditions.'],
+      ['Accessibility Mapping', 'Built a GIS-based transit accessibility index from bus stop and subway station density to identify transport-disadvantaged areas, then matched comparable neighborhoods via quasi-experimental design.'],
+      ['Causal Estimation', 'Applied RDD with WLS across 12 matched neighborhood pairs to isolate DRT\'s impact on property values from broader market conditions.'],
     ],
     results: [
-      ['Value Appreciation', 'Shifted downward price trends toward a 3.51M KRW growth trend in declining markets.'],
-      ['Market Amplification', 'Achieved a price increase 1.5× stronger than non-service areas in upward markets.'],
-      ['Price Defense', 'Moderated property value drops during downturns compared to non-service areas.'],
+      ['Trend Reversal', 'In a declining market, DRT-served areas shifted from falling prices to a 3.51-point growth trend, while non-served areas kept declining.'],
+      ['Growth Amplification', 'In a rising market, DRT-served areas appreciated 1.5× faster than non-served areas.'],
+      ['Downturn Cushioning', 'In another declining market, DRT-served areas fell far less than non-served areas.'],
     ],
     poster: 'assets/posters/capstone.png',
     posterTitle: 'Let It Be, Let It Move'
