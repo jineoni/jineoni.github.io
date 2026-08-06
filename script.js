@@ -15,9 +15,7 @@ const projects = {
     ],
     results: [
       ['Matching Accuracy', 'The combined title, body, and thumbnail signal outperformed any single signal alone, becoming the pipeline\'s final matching configuration.'],
-    ],
-    companyLink: 'https://www.kearney.com',
-    companyName: 'Kearney'
+    ]
   },
   kakaomobility: {
     type: 'Internship',
@@ -34,9 +32,7 @@ const projects = {
     results: [
       ['Validation', 'Achieved an Adjusted Rand Index of 0.85 for cluster stability across months.'],
       ['Model Impact', 'Delivered a higher-granularity input that improved the ETA model\'s sensitivity to dynamic conditions.'],
-    ],
-    companyLink: 'https://www.kakaomobility.com',
-    companyName: 'Kakao Mobility'
+    ]
   },
   translab: {
     type: 'Research',
@@ -129,7 +125,6 @@ function openModal(id) {
     ${p.context ? `<div class="modal-section"><h4>Problem Context</h4><p>${p.context}</p></div>` : ''}
     <div class="modal-section"><h4>Key Works</h4><ul>${p.works.map(([k, v]) => `<li><strong>${k}:</strong> ${v}</li>`).join('')}</ul></div>
     ${resultBlock}
-    ${p.companyLink ? `<div class="modal-section"><a href="${p.companyLink}" target="_blank" class="ext-link">Visit ${p.companyName} Website →</a></div>` : ''}
   `;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
