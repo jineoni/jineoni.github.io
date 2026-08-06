@@ -9,7 +9,8 @@ jineoni.github.io/
 ├── assets/
 │   ├── resume.pdf       # Downloadable resume
 │   ├── posters/         # Research and project posters
-│   └── slides/          # Presentation slides
+│   ├── slides/          # Presentation slides
+│   └── thumbnails/      # Project card thumbnails
 ├── images/              # Company logos
 ├── index.html           # Main structure and content
 ├── style.css            # Styles and layout
