@@ -40,17 +40,18 @@ const projects = {
   },
   translab: {
     type: 'Research',
-    title: 'Station Access Time Modeling',
+    title: 'Railway Access Time Analysis',
     period: 'Mar 2024 – Jun 2024',
     role: 'Research Intern at Transportation Planning Lab, Yonsei University',
     tags: ['Python', 'R'],
-    overview: 'Built an interpretable model of railway access time to support a policy-oriented study on transit accessibility.',
+    overview: 'Analyzed how access mode, trip purpose, and station characteristics shape access time to Korea\'s railway stations, to support a policy-oriented accessibility study.',
     works: [
-      ['Statistical Modeling', 'Built a linear regression model for railway access time using national travel survey data.'],
-      ['Variable Validation', 'Applied t-tests and ANOVA to test candidate variable significance.'],
+      ['Variable Validation', 'Applied t-tests and ANOVA across 18,306 cleaned trip records to test candidate variables, including access time differences by population density.'],
+      ['Model Selection', 'Compared 8 regression scenarios varying variable inclusion and functional form, selecting the one minimizing multicollinearity (condition number) while maximizing fit.'],
+      ['Multiple Regression', 'Built a final log-linear model spanning trip attributes (access mode, transfers, purpose, party size), station attributes (region, KTX service), and socioeconomic traits (age, gender, job and car/carshare status).'],
     ],
     results: [
-      ['Explanatory Power', 'Achieved 30%+ R² while preserving the interpretability required for policy integration.'],
+      ['Explanatory Power', 'Achieved R² = 0.296 while keeping the model interpretable for policy use, with access mode and transfer status as the strongest predictors of access time.'],
     ]
   },
   umc: {
@@ -74,7 +75,7 @@ const projects = {
   },
   drt: {
     type: 'Undergraduate Capstone Project',
-    title: 'Impact of Demand-Responsive Transit (DRT) on Property Values',
+    title: 'Impact of Demand-Responsive Transit on Property Values',
     period: 'Sep 2025 – Dec 2025',
     role: 'Best Capstone Project, 2025',
     tags: ['Python', 'RDD'],
