@@ -1,3 +1,32 @@
+const themeToggle = document.querySelector('.theme-toggle');
+let selectedTheme;
+
+try {
+  selectedTheme = localStorage.getItem('portfolio-theme');
+} catch {
+  // The toggle still works when browser storage is unavailable.
+}
+
+function updateTheme() {
+  const dark = selectedTheme === 'dark';
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeToggle.firstElementChild.textContent = dark ? '☀' : '☾';
+}
+
+themeToggle.addEventListener('click', () => {
+  selectedTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  updateTheme();
+  try {
+    localStorage.setItem('portfolio-theme', selectedTheme);
+  } catch {
+    // Keep the selected theme for the current page.
+  }
+});
+
+updateTheme();
+themeToggle.hidden = false;
+
 const projects = {
   kearney: {
     type: 'Internship',
@@ -49,57 +78,6 @@ const projects = {
     results: [
       ['Explanatory Power', 'Achieved R² = 0.296 while keeping the model interpretable for policy use, with access mode and transfer status as the strongest predictors of access time.'],
     ]
-  },
-  umc: {
-    type: 'Team Project',
-    title: 'Seoul Digital Connectivity Analysis',
-    period: 'Dec 2025 – Jun 2026',
-    role: 'ITU UMC Data Hackathon 2026 · Recognized by ITU as 1 of 7 notable teams (104 applicants)',
-    tags: ['Python', 'HLM', 'OpenAI API'],
-    overview: 'Applied the ITU\'s Universal & Meaningful Connectivity (UMC) framework to Seoul, combining district-level indicators, individual survey data, and hyperlocal community posts to locate digital connectivity gaps and how they\'re actually experienced.',
-    context: 'Official connectivity indicators operate at the district level and can miss disparities that only surface in individual usage patterns or residents\' lived, day-to-day experience.',
-    works: [
-      ['Composite Index', 'Built a UMC composite index across Seoul\'s 25 districts from six dimensions (Connectivity, Availability for Use, Affordability, Devices, Digital Skills, Safety), then tested spatial clustering (LISA) for district hot and cold spots.'],
-      ['Multilevel Modeling', 'Applied a two-level hierarchical linear model to 10,000 individuals nested in 25 districts to separate individual- from district-level drivers of digital usage.'],
-      ['Platform Signal Pipeline', 'Crawled 1.3M+ Danggeun community posts from 2024 to 2026, then built a 3-layer pipeline combining LLM classification, Empirical-Bayes shrinkage against administrative priors, and multi-agent inference to surface lived-experience deficits by district.'],
-    ],
-    results: [
-      ['Composite Score', 'Ranged from 0.279 in Jungnang-gu to 0.695 in Seocho-gu, with individual traits like lower education and older age explaining most of the usage gap rather than district conditions.'],
-      ['Validated Blind Spots', 'Validated LLM classification against human review at 84.7% agreement (κ = 0.673) and surfaced gaps official indicators missed, such as Jungnang-gu\'s "adequate" score masking recurring weather-driven outages.'],
-      ['Policy Translation', 'Proposed two interventions grounded in these findings: point-of-need digital support for low-educated older adults, and a dedicated resilience response for weather-driven communications outages.'],
-    ]
-  },
-  drt: {
-    type: 'Undergraduate Capstone Project',
-    title: 'Impact of Demand-Responsive Transit on Property Values',
-    period: 'Sep 2025 – Dec 2025',
-    role: 'Best Capstone Project, 2025',
-    tags: ['Python', 'RDD'],
-    overview: 'A causal study examining whether DRT (Demand-Responsive Transit) introduction leads to measurable changes in property values in transport-disadvantaged areas.',
-    context: 'Limited transit access can suppress property values in transport-disadvantaged areas, yet DRT\'s actual economic impact remains empirically unverified.',
-    works: [
-      ['Accessibility Mapping', 'Built a GIS-based transit accessibility index from bus stop and subway station density to identify transport-disadvantaged areas, then matched comparable neighborhoods via quasi-experimental design.'],
-      ['Causal Estimation', 'Applied regression discontinuity design (RDD) with weighted least squares across 12 matched neighborhood pairs to isolate DRT\'s impact on property values from broader market conditions.'],
-    ],
-    results: [
-      ['Trend Reversal', 'In a declining market, DRT-served areas shifted from falling prices to a 3.51-point growth trend, while non-served areas kept declining.'],
-      ['Growth Amplification', 'In a rising market, DRT-served areas appreciated 1.5× faster than non-served areas.'],
-      ['Downturn Cushioning', 'In another declining market, DRT-served areas fell far less than non-served areas.'],
-    ]
-  },
-  dotori: {
-    type: 'Team Project',
-    title: 'Dotori, AI College Application Consulting Agent',
-    period: 'Nov 2024 – Apr 2025',
-    tags: ['Python', 'TypeScript', 'OpenAI', 'FastAPI'],
-    overview: 'An AI platform that provides personalized college admissions strategies, making high-quality consulting accessible and affordable.',
-    context: 'Professional admissions consulting is expensive and time-intensive. This project addresses the information gap through automation and data-driven matching.',
-    works: [
-      ['Data Pipeline', 'Built a pipeline to parse Common Data Set PDFs from universities into a structured database.'],
-      ['Matching Algorithm', 'Developed a weighted scoring system to categorize school fit into Reach, Match, and Safety.'],
-      ['Dashboard', 'Built a visualization feature for students to compare their profile against each matched school.'],
-    ],
-    results: []
   }
 };
 

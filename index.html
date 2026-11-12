@@ -10,64 +10,65 @@
 </head>
 <body>
 
-<nav>
+<nav aria-label="Sections">
   <ul class="nav-links">
     <li><a href="#hero">About</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>
+  <button class="icon-btn theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+    <span aria-hidden="true">☾</span>
+  </button>
 </nav>
 
+<main>
 <div class="section" id="hero">
-  <div class="fade">
-    <div class="hero-top">
-      <img src="https://avatars.githubusercontent.com/jineoni" alt="Jiyoon Shin" class="hero-photo">
+  <div class="fade hero-layout">
+    <div class="hero-profile">
+      <div class="hero-photo-frame">
+        <img src="assets/profile1.jpg" alt="Jiyoon Shin" class="hero-photo">
+      </div>
+      <div class="hero-btns">
+        <a href="mailto:jyoon.shin12@gmail.com" class="icon-btn" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jiyoon-shin-15b196299/" target="_blank" class="icon-btn" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/jineoni" target="_blank" class="icon-btn" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="https://review-ml.tistory.com/" target="_blank" class="icon-btn" aria-label="Blog" title="Blog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=u1wWnyYAAAAJ" target="_blank" class="icon-btn" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </a>
+      </div>
+      <div class="hero-download">
+        <a href="assets/resume.pdf" download class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
+      </div>
+    </div>
+    <div class="hero-bio">
       <h1>Jiyoon Shin</h1>
-    </div>
-    <p>I am a master’s student in Computer Science at Georgia Tech, interested in using statistical and machine learning methods to understand how complex systems evolve and how their components interact over time.</p>
-    <div class="interests-label">Interests</div>
-    <div class="interest-tags">
-      <span class="tag">Transportation & Mobility</span>
-      <span class="tag">Biomedical Informatics</span>
-      <span class="tag">Causal ML</span>
-      <span class="tag">Graph ML</span>
-      <span class="tag">Spatiotemporal ML</span>
-      <span class="tag">Multimodal ML</span>
-    </div>
-    <div class="hero-btns">
-      <a href="mailto:jyoon.shin12@gmail.com" class="icon-btn" aria-label="Email" title="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/jiyoon-shin-15b196299/" target="_blank" class="icon-btn" aria-label="LinkedIn" title="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a>
-      <a href="https://github.com/jineoni" target="_blank" class="icon-btn" aria-label="GitHub" title="GitHub">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-      </a>
-      <a href="https://review-ml.tistory.com/" target="_blank" class="icon-btn" aria-label="Blog" title="Blog">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      </a>
-      <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=u1wWnyYAAAAJ" target="_blank" class="icon-btn" aria-label="Google Scholar" title="Google Scholar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-      </a>
-      <a href="assets/resume.pdf" download class="btn btn-resume">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Resume
-      </a>
+      <p>Hi! I'm a Master's student in Computer Science at <a href="https://www.cc.gatech.edu/">Georgia Tech</a>, specializing in Machine Learning. My academic background spans Urban Planning &amp; Engineering, Applied Statistics, and Computer Science, shaping how I approach problems from different perspectives.</p>
+      <p>My research interests lie in <strong>spatiotemporal machine learning</strong> and <strong>simulation-based evaluation</strong>. I'm particularly interested in modeling spatial and temporal dependencies for forecasting, and designing informative test scenarios to evaluate how models and decision-making policies perform under different conditions.</p>
+      <p>One application I’m especially drawn to is mobility and intelligent transportation systems. Their complexity arises from the interplay of human behavior, infrastructure, and constantly changing conditions, making them particularly challenging and interesting systems to study.</p>
     </div>
   </div>
 </div>
 
 <div class="section" id="news">
-  <div class="fade">
-    <div class="sec-label">News</div>
-    <div class="news-empty">More updates coming soon.</div>
-  </div>
+  <h2 class="sec-label">News</h2>
+  <p>More updates coming soon.</p>
 </div>
 
 <div class="section" id="projects">
   <div class="fade">
-    <div class="sec-label">Selected Projects</div>
+    <h2 class="sec-label">Projects</h2>
     <div class="projects-grid">
 
       <div class="proj-card">
@@ -152,6 +153,8 @@
     </div>
   </div>
 </div>
+
+</main>
 
 <footer>© 2026 Jiyoon Shin</footer>
 
