@@ -63,27 +63,18 @@
 
 <div class="section" id="news">
   <h2 class="sec-label">News</h2>
-  <p>More updates coming soon.</p>
+  <ul class="news-list">
+    <li><span class="news-period">Aug 2026</span><p>Began my master’s in Computer Science at <a href="https://www.cc.gatech.edu/">Georgia Tech</a>.</p></li>
+    <li><span class="news-period">Mar–Jun 2026</span><p>Worked as a Data Engineering Intern on the <a href="https://www.kearney.com/">Kearney</a> Digital Transformation team, building data pipelines and automating workflows.</p></li>
+    <li><span class="news-period">May 2025–Feb 2026</span><p>Worked as a Data Science Intern on the <a href="https://www.kakaomobility.com/">Kakao Mobility</a> AI R&amp;D team, improving ETA prediction and route recommendation models.</p></li>
+    <li><span class="news-period">Mar–Jun 2024</span><p>Worked as an Undergraduate Research Assistant in the Transportation Planning Lab at <a href="https://yongei.yonsei.ac.kr/urban/research/research_traffic_overview.do">Yonsei University</a>, supporting research on travel behavior and transportation demand.</p></li>
+  </ul>
 </div>
 
 <div class="section" id="projects">
   <div class="fade">
     <h2 class="sec-label">Projects</h2>
     <div class="projects-grid">
-
-      <div class="proj-card">
-        <div class="proj-thumb"><img src="assets/thumbnails/newsroom.png" alt="Newsroom Coverage Tracker"></div>
-        <div class="proj-card-body">
-          <div class="proj-meta-row"><img src="images/kearney.jpg" alt="Kearney" class="proj-logo-sm"><span class="proj-type">Internship</span><span class="proj-dot">·</span><span class="proj-period">Mar–Jun 2026</span></div>
-          <h3>Newsroom Coverage Tracker</h3>
-          <div class="tags"><span class="tag">Python</span><span class="tag">BERT</span><span class="tag">CLIP</span><span class="tag">Multi-modal Matching</span></div>
-          <p class="proj-desc">An automated system that crawls 40+ country newsrooms to verify whether HQ press releases were picked up locally.</p>
-          <div class="proj-links">
-            <button class="read-more" onclick="openModal('kearney')">Read more →</button>
-            <a href="https://www.kearney.com" target="_blank" class="ext-link">Company →</a>
-          </div>
-        </div>
-      </div>
 
       <div class="proj-card">
         <div class="proj-thumb"><img src="assets/thumbnails/itu.png" alt="Seoul Digital Connectivity Analysis"></div>
@@ -111,20 +102,6 @@
       </div>
 
       <div class="proj-card">
-        <div class="proj-thumb"><img src="assets/thumbnails/road_clustering.png" alt="Traffic Flow Road Clustering"></div>
-        <div class="proj-card-body">
-          <div class="proj-meta-row"><img src="images/kakaomobility.png" alt="Kakao Mobility" class="proj-logo-sm"><span class="proj-type">Internship</span><span class="proj-dot">·</span><span class="proj-period">May 2025–Feb 2026</span></div>
-          <h3>Traffic Flow Road Clustering</h3>
-          <div class="tags"><span class="tag">Python</span><span class="tag">PCA</span><span class="tag">K-means</span><span class="tag">BigQuery</span></div>
-          <p class="proj-desc">A traffic-flow clustering feature that replaces static road classification to improve ETA prediction sensitivity.</p>
-          <div class="proj-links">
-            <button class="read-more" onclick="openModal('kakaomobility')">Read more →</button>
-            <a href="https://www.kakaomobility.com" target="_blank" class="ext-link">Company →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
         <div class="proj-thumb"><img src="assets/thumbnails/capstone.png" alt="Impact of Demand-Responsive Transit on Property Values"></div>
         <div class="proj-card-body">
           <div class="proj-meta-row"><img src="images/yonsei.png" alt="Yonsei" class="proj-logo-sm"><span class="proj-type">Capstone</span><span class="proj-dot">·</span><span class="proj-period">Sep–Dec 2025</span></div>
@@ -137,19 +114,6 @@
         </div>
       </div>
 
-      <div class="proj-card">
-        <div class="proj-thumb"><img src="assets/thumbnails/access_time.png" alt="Railway Access Time Analysis"></div>
-        <div class="proj-card-body">
-          <div class="proj-meta-row"><img src="images/yonsei.png" alt="Yonsei" class="proj-logo-sm"><span class="proj-type">Research</span><span class="proj-dot">·</span><span class="proj-period">Mar–Jun 2024</span></div>
-          <h3>Railway Access Time Analysis</h3>
-          <div class="tags"><span class="tag">Python</span><span class="tag">R</span></div>
-          <p class="proj-desc">A multiple regression study on how access mode, trip purpose, and station characteristics shape access time to Korea's railway stations.</p>
-          <div class="proj-links">
-            <button class="read-more" onclick="openModal('translab')">Read more →</button>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
@@ -157,13 +121,6 @@
 </main>
 
 <footer>© 2026 Jiyoon Shin</footer>
-
-<div class="modal-overlay" id="modal-overlay" onclick="closeOnBg(event)">
-  <div class="modal" id="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div id="modal-content"></div>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
