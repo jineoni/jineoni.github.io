@@ -111,7 +111,7 @@ main { max-width: 992px; margin: 0 auto; padding: 0 40px; }
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .proj-card {
   border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-  display: flex; flex-direction: column; height: 440px;
+  display: flex; flex-direction: column; min-height: 440px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .proj-card:hover { border-color: var(--hover-border); box-shadow: 0 8px 24px rgba(31,58,99,0.08); }
